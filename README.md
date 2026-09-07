@@ -1,0 +1,3 @@
+# PracticaTrade
+
+Repositorio en preparación.
