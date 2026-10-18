@@ -1,31 +1,89 @@
 # PracticaTrade
 
-Simulador educativo de trading de criptomonedas con dinero virtual y cotizaciones de mercado. Permite practicar compras y ventas sin arriesgar capital real.
+**Explore stocks and crypto, practice trades with virtual money, and track your portfolio.**
 
-**Aplicación pública:** https://practicatrade-simulador.alejandrolillorod-al.chatgpt.site
+[**Try the live demo →**](https://practicatrade-simulador.alejandrolillorod-al.chatgpt.site)
 
-## Funciones actuales
+An educational trading simulator built as a hands-on learning project. Start with **€10,000 in virtual funds**, explore assets, and see how simulated trades affect your cash and holdings. The application interface is in Spanish.
 
-- Cartera virtual inicial de 10.000 €.
-- Precio de Bitcoin actualizado desde CoinGecko cada 30 segundos.
-- Órdenes simuladas de compra y venta.
-- Cálculo instantáneo de efectivo, posición y valor total.
-- Persistencia de la cartera en el dispositivo.
-- Interfaz adaptable a escritorio, tableta y móvil.
+![PracticaTrade market dashboard](practicatrade.png)
 
-## Desarrollo local
+## See it in action
 
-Requiere Node.js 22.13 o posterior.
+The walkthrough below shows the market dashboard, a simulated purchase, and the resulting portfolio.
+
+![Animated walkthrough: dashboard, purchase, and portfolio](practicatrade-demo.gif)
+
+## Try it in one minute
+
+1. Open the [live demo](https://practicatrade-simulador.alejandrolillorod-al.chatgpt.site).
+2. Select an asset in **Mercado**.
+3. Enter a virtual amount, such as **€250**, and keep **Al mercado** selected.
+4. Click **Comprar**, then open **Mis inversiones** to inspect your position.
+5. Reload the page: your practice portfolio is saved in this browser.
+
+No account, payment details, or real funds are required.
+
+## Features
+
+- Stock and cryptocurrency catalog, with asset search.
+- Simulated market purchases and sales.
+- Cash balance, open positions, average purchase price, and portfolio performance.
+- Market charts with multiple time ranges.
+- Asset watchlist and market exploration.
+- Virtual deposits, withdrawals, and simulation reset.
+- Pending-order creation and cancellation for limit, stop-loss, and take-profit orders.
+- Browser-local persistence of portfolio and preferences.
+- Responsive layout with mobile navigation.
+
+## Technology
+
+- **TypeScript & React** for the application.
+- **Vinext & Vite** for development and builds.
+- **Tailwind CSS & shadcn/ui** for the interface.
+- **Recharts** for charts.
+- A server-side market endpoint fetching data from **Yahoo Finance**.
+- **localStorage** for browser-local simulation data.
+
+## Run locally
+
+Requires **Node.js 22.13 or later** and npm.
 
 ```bash
-npm install
+git clone https://github.com/alejandrolillorodriguez1/practicatrade.git
+cd practicatrade
+npm ci
 npm run dev
 ```
 
-## Aviso
+Open the local URL printed by the development server.
 
-PracticaTrade es un proyecto educativo. No ejecuta operaciones reales ni ofrece asesoramiento financiero. La cotización puede sufrir retrasos o interrupciones según la disponibilidad del proveedor de datos.
+```bash
+npm run build
+```
 
-## Licencia
+Creates the production build. Market data requires access to the external provider.
 
-MIT
+## Learning focus
+
+This project explores third-party API integration, interactive charts, React state management, currency conversion, portfolio calculations, and browser persistence.
+
+## Current limitations
+
+- Educational simulation only: no brokerage connection or real trades.
+- Quotes can be delayed, cached, or unavailable. The interface includes fallback prices; charts may use illustrative fallback data when historical data is unavailable.
+- Pending advanced orders can be created and cancelled, but automatic execution when the target is reached is not implemented.
+- Simulation data stays in the current browser; there is no account synchronization.
+- The simulator does not model fees, slippage, or taxes.
+
+## Feedback welcome
+
+Try a simulated purchase and inspect the portfolio. Is the relationship between cash, invested value, and performance clear?
+
+[Report a bug or suggest an improvement](https://github.com/alejandrolillorodriguez1/practicatrade/issues).
+
+For bug reports, include your browser, steps to reproduce, and the expected result. Contributions are welcome; please discuss larger changes in an issue first.
+
+## License
+
+[MIT](LICENSE)
